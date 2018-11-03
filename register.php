@@ -84,7 +84,7 @@
 								<input type="text" name="name" id="name" class="form-control" placeholder="Full Name" value = "<?php echo $name ?>" required><br>
 								<input type="text" name="email" id="email" class="form-control" placeholder="Email Id" value = "<?php echo $email ?>"  required><br>
 								<input type="text" name="username" id="username" class="form-control" placeholder="Username" value = "<?php echo $username ?>"  required><br>
-								<input type="password" name="password" id="password" class="form-control" placeholder="Password" value = "<?php echo $password ?>" required><br>
+								<input type="password" name="password" id="password" class="form-control" placeholder="Password" value = "" required><br>
 								<input type="submit" value="Register" name="registerBtn" id="registerBtn" class="btn btn-dark btn-lg">
 							</form>
 						</div>
