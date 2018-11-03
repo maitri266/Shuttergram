@@ -7,8 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <?php require("bootstrap.php");
-          require("conn.php");
-    ?>
+          require("conn.php");?>
 </head>
 <body>
   <!-- login form -->
@@ -23,13 +22,20 @@
         $query = "SELECT * from user WHERE username = '$username' && password = '$password'";
         if(mysqli_query($conn,$query)){
           $results = mysqli_query($conn,$query);
-          $array = mysqli_fetch_array($results);
-          if(count($array) == 0);{ ?>
+          $array = mysqli_fetch_array($results,MYSQLI_ASSOC);
+          var_dump($array);
+          if($array == NULL){ ?>
           <div class="alert alert-dismissible alert-danger">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <strong>Username or password incorrect</strong>
+          <strong>Cannot find an account with the specified credentials</strong>
           </div>
       <?php
+          }else{
+            session_start();
+            $_SESSION['name'] = $array['name'];
+            $_SESSION['username'] = $array['username'];
+            $_SESSION['email'] = $array['email'];
+            header("Location:profile.php");
           }
         }else{
           die(mysqli_error());
