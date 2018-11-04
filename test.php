@@ -16,6 +16,7 @@
     <body>
         <div class="container mx-auto w-50">
         <?php
+<<<<<<< HEAD
             session_start();    //starting the session      
 
             if(!$conn){
@@ -68,6 +69,15 @@
                 }
          
             }
+=======
+            session_start();
+            $i=0;
+                $_SESSION['index'] = $i;
+                $_SESSION['username'] = 'User '.$i;
+                $_SESSION['caption'] = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, repellat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi autem odit reprehenderit culpa dignissimos accusamus, ipsam laborum, inventore delectus odio officia ipsa quos. Quod, hic nam architecto iure voluptate natus nisi nihil debitis vero pariatur consequatur quibusdam totam distinctio sint.";
+                include('post.php');
+            
+>>>>>>> refs/remotes/origin/master
         ?>
         </div>
     </body>
