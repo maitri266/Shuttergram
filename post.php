@@ -12,27 +12,27 @@
     <link rel="stylesheet" href="post.css">
 </head>
 <body>
-    <div class="card postCard w-50">
+    <div class="card postCard">
         <div class="card-header">
             <div class="row">
                 <div class="col-sm-1"><img src="Logo Final.png" class="rounded-circle postImg" alt="Profile"></div>
-                <div class="col-sm-11 h4 align-self-center postTitle">&nbsp;&nbsp;&nbsp;Username</div>
+                <div class="col-sm-11 h4 align-self-center postTitle"><?php echo $_SESSION['username']; ?></div>
             </div>
         </div>
         <div class="card-body">
             <img src="bridge.jpg" class="img-fluid" alt="">        
         </div>
         <div class="card-footer">
-            <h3><i class='far'>&#xf004;</i>&nbsp;&nbsp;
-            <i  style=";" class='far farCustom'>&#xf27a;</i></h3>
-            <p class="h5">665 likes</p>
-            <a class="h5 username" href="#"><?php echo "username"; ?></a>
-            <span class="muted">Lorem ipsum dolor sit amet. </small>
-            <a href="#caption" class="muted" data-toggle="collapse">more</a>
-            <div id="caption" class="collapse">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <h3>
+                <i class='far'>&#xf004;</i>&nbsp;
+                <span class="h5">665</span>&nbsp;
+                <i  style=";" class='far farCustom'>&#xf27a;</i>
+            </h3>
+            <a class="h5 username" href="#"><?php echo $_SESSION['username']; ?></a>
+            <span class="muted"><?php echo $_SESSION['caption']; ?></small>
+            <button class="btn btn-outline-dark btn-sm more" data-target="#caption<?php echo $_SESSION['index']; ?>" class="muted" data-toggle="collapse">more</button>
+            <div id="caption<?php echo $_SESSION['index']; ?>" class="collapse">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium voluptate iure dolor, iusto, recusandae non quae, blanditiis incidunt numquam odit voluptatibus minima possimus atque impedit officia nostrum dolore ut ducimus!
             </div>
         </div>
     </div>
