@@ -1,0 +1,13 @@
+.postImg{
+    width: auto;
+    height: auto;
+    border-radius : 200px;
+    border : 0.3vw solid black;
+    padding : 0.2vw;
+    margin: 1vw;
+}
+
+.postTitle{
+    position: relative;
+    left: 4vw;
+}
