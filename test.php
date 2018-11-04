@@ -24,11 +24,12 @@
     </div>
 
     <script>
-        $(document).ready(function(){
-            $("button.more").click(function(){
-                $(this).sibling
-            });
-        });
+        // $(document).ready(function(){
+        //     $("button").click(function(){
+        //         $var = $(this).attr('data-target');
+        //         $(this).closest($var).slideToggle();
+        //     });
+        // });
     </script>
 </body>
 </html>
