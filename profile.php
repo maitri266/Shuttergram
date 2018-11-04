@@ -1,18 +1,32 @@
 <?php
     session_start();
     require("bootstrap.php");
-    require("conn.php");
+   // require("conn.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- for inline icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.13/css/mdb.min.css" rel="stylesheet">
     <style>
         #post{
-            margin-bottom:4vh
+            margin-bottom:4vh;
+        }
+
+        #imgStyle{
+            height:30vh;
+             width:30vh; 
+             box-shadow:1px 1px 10px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -22,23 +36,25 @@
         <br>
         <div class="container">
             <div class="row">
-                <div class="col-4">
-                    <img src="shuttergramDefault.png" class="img-thumbnail rounded" alt="">
+                <div class="col-4 text-center">
+                    <img src="shuttergramDefault.png" class="img-thumbnail rounded-circle" alt="" id="imgStyle" >
                 </div>
-                <div class="col-8">
+                <div class="col-8 text-center">
                     <div class="row justify-content-center">
+                        <!-- <div class="col-3"></div> -->
                         <div class="col-3">
                             <span id="username"><b>siddarthrai</b></span>
                         </div>
                         <div class="col-3">
                             <a name="editProfile" id="editProfile" class="btn btn-outline-dark btn-sm" href="#" >edit profile</a>
                         </div>
+                        <!-- <div class="col-3"></div> -->
                     </div>
                     <br>
                     <div class="row justify-content-center">
-                        <div class="col-3">345 followers</div>
-                        <div class="col-3">145 posts</div>
-                        <div class="col-3">454 following</div>
+                        <div class="col-2">345 followers</div>
+                        <div class="col-2">145 posts</div>
+                        <div class="col-2">454 following</div>
                     </div>
                     <br>
                     <div class="row justify-content-center">
@@ -65,30 +81,19 @@
                     </div>
                 </div>
             </div> 
-            <div class="col-4" id="post">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Title</h3>
-                        <p class="card-text">Text</p>
+
+            <!-- mdbootstrap  -->
+            <div class="col-4">
+                <div class="view overlay">
+                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.jpg" class="img-fluid " alt="sample image">
+                    <div class="mask flex-center rgba-black-strong">
+                        <h3 class="white-text text-center">
+                        200 <i style='font-size:auto' class='far'>&#xf004;</i>&nbsp;&nbsp;
+                        20 <i style='font-size:auto' class='far'>&#xf27a;</i>
+                        </h3>
                     </div>
                 </div>
-            </div> 
-            <div class="col-4" id="post">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Title</h3>
-                        <p class="card-text">Text</p>
-                    </div>
-                </div>
-            </div> 
-            <div class="col-4" id="post">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Title</h3>
-                        <p class="card-text">Text</p>
-                    </div>
-                </div>
-            </div> 
+            </div>
     </div>
     
      
