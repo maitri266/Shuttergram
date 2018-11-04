@@ -31,10 +31,10 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <button class="btn btn-block btn-sm btn-light">edit profile</button>
-                            <button class="btn btn-block btn-sm btn-light">change password</button>
-                            <button class="btn btn-block btn-sm btn-light">log out</button>
-                            <button class="btn btn-block btn-sm btn-danger">delete account</button>
+                            <button class="btn btn-block btn-sm btn-light">Edit Profile</button>
+                            <button class="btn btn-block btn-sm btn-light">Change Password</button>
+                            <button class="btn btn-block btn-sm btn-light">Change Email</button>
+                            <button class="btn btn-block btn-sm btn-danger">Delete Account</button>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
