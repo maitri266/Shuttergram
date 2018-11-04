@@ -28,6 +28,7 @@
 </head>
 
 <body>
+    <?php include("navbar.php"); ?>
     <div class="container">
         <br>
         <div class="container">
@@ -92,10 +93,8 @@
             </div>
     </div>
     
-     
-      
-            
-    
+    <br><br><br>
+    <?php require("footbar.php"); ?>
 </body>
 
 <!--bootstrap-->

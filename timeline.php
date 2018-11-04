@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Test</title>
-        <?php 
+        <?php
+            session_start();    //starting the session      
             require("bootstrap.php");
             require("conn.php"); ?>
         <!-- for inline icons -->
@@ -14,9 +15,9 @@
         <link rel="stylesheet" href="post.css">
     </head>
     <body>
-        <div class="container mx-auto w-50">
+        <?php include("navbar.php"); ?>
+        <div class="container mx-auto">
         <?php
-            session_start();    //starting the session      
 
             if(!$conn){
                 die("Error connecting to the database");
@@ -64,18 +65,23 @@
                     } //closing bracket of traversing posts for loop
                         
                 }else{
-                    die("Query return Unsuccessfull");
+                    //if Number of Posts available is 0
+                    ?>
+                        <div class="jumbotron jumbotron-fluid">
+                            <div class="h2 text-center">
+                                No more posts to show
+                            </div>
+                            <center>
+                                <iframe src="https://giphy.com/embed/X8yP0AgGK0GQZaVXz9" frameBorder="0" class="giphy-embed img-fluid"></iframe>
+                            </center>
+                            <div class="h3 text-center muted">Come Back Later</div>
+                        </div>
+                    <?php
                 }
-         
-            }
-            session_start();
-            $i=0;
-                $_SESSION['index'] = $i;
-                $_SESSION['username'] = 'User '.$i;
-                $_SESSION['caption'] = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, repellat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi autem odit reprehenderit culpa dignissimos accusamus, ipsam laborum, inventore delectus odio officia ipsa quos. Quod, hic nam architecto iure voluptate natus nisi nihil debitis vero pariatur consequatur quibusdam totam distinctio sint.";
-                include('post.php');
-            
+            }            
         ?>
         </div>
+        <br><br><br>
+        <?php require("footbar.php"); ?>
     </body>
 </html>

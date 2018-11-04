@@ -1,26 +1,11 @@
-<?php
-session_start();
-    require("bootstrap.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        .footbar{
-            border-left: 1px solid rgba(0,0,0,.1);
-            border-collapse: collapse;
-            font-size:24px; color:gray; 
-        }
-
-        .icon{
-            color:gray;
-            padding:5px;
-        }
-    </style>
+    <title>Footbar</title>
+    <link rel="stylesheet" href="footbar.css">
 
     <!-- for home , serach , add-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,19 +15,19 @@ session_start();
 
 </head>
 <body>
-<div class="container-fluid fixed-bottom" style="border-top:1px solid rgba(0,0,0,.1);">
-    <div class="row justify-content-between  text-center">
+<div class=" container-fluid fixed-bottom" style="border-top:1px solid rgba(0,0,0,.1);">
+    <div class="footbar row justify-content-between  text-center">
             <div  class=" footbar col-3 my-auto">
-                <a href=""><i class="icon fa">&#xf015;</i></a>
+                <a href="timeline.php"><i class="icon fa">&#xf015;</i></a>
             </div>
             <div  class=" footbar col-3 my-auto">
-                <a href=""><i class="icon fa">&#xf002;</i></a>
+                <a href="#"><i class="icon fa">&#xf002;</i></a>
             </div>
             <div  class=" footbar col-3 my-auto">
-                <a href=""><i class="icon fas fa-upload"></i></a>
+                <a href="#"><i class="icon fas fa-upload"></i></a>
             </div>
             <div  class=" footbar col-3 my-auto">
-                <a href=""><i class="icon fas fa-user-alt"></i></a>
+                <a href="profile.php"><i class="icon fas fa-user-alt"></i></a>
             </div>
     </div>
 </div>

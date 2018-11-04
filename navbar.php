@@ -1,7 +1,3 @@
-<?php
-session_start();
-    require("bootstrap.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
