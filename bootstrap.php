@@ -9,3 +9,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<!-- font family custom -->
+<link href="https://fonts.googleapis.com/css?family=Pattaya" rel="stylesheet">
+
