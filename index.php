@@ -23,7 +23,6 @@
         if(mysqli_query($conn,$query)){
           $results = mysqli_query($conn,$query);
           $array = mysqli_fetch_array($results,MYSQLI_ASSOC);
-          var_dump($array);
           if($array == NULL){ ?>
           <div class="alert alert-dismissible alert-danger">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
