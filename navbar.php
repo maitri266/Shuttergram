@@ -19,7 +19,7 @@
 <body>
 <div class="container-fluid" style="border-bottom:1px solid rgba(0,0,0,.1);">
     <div class="row justify-content-between text-center">
-            <div class="col-2 text-left my-auto">
+            <div class="col-2 text-left my-auto" >
                 <button class="btn btn-sm btn-light" data-toggle="modal" data-target="#exampleModalCenter"><i style="font-size:24px ; color:gray; " class="fa">&#xf013;</i></button>
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">

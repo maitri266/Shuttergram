@@ -15,22 +15,22 @@
 
 </head>
 <body>
-<div class=" container-fluid fixed-bottom" style="border-top:1px solid rgba(0,0,0,.1);">
-    <div class="footbar row justify-content-between  text-center">
+
+    <div class=" container-fluid fixed-bottom" style="border-top:1px solid rgba(0,0,0,.1);">
+        <div class="footbar row justify-content-between  text-center">
             <div  class=" footbar col-3 my-auto">
                 <a href="timeline.php"><i class="icon fa">&#xf015;</i></a>
             </div>
             <div  class=" footbar col-3 my-auto">
                 <a href="#"><i class="icon fa">&#xf002;</i></a>
             </div>
-            <div  class=" footbar col-3 my-auto">
-                <a href="#"><i class="icon fas fa-upload"></i></a>
+            <div  class=" footbar col-3 my-auto" >
+                <a href="upload.php"><i class="icon fas fa-upload" ></i></a>
             </div>
             <div  class=" footbar col-3 my-auto">
                 <a href="profile.php"><i class="icon fas fa-user-alt"></i></a>
             </div>
+        </div>
     </div>
-</div>
-
 </body>
 </html>

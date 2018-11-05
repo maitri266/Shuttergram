@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="post.css">
     </head>
     <body>
+
         <?php include("navbar.php"); ?>
         <div class="container mx-auto">
         <?php
