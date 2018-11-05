@@ -45,7 +45,7 @@
                                 <div class="col-sm-11 h4 align-self-center postTitle"><?php echo $row['postUser']; ?></div>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <img src="<?php echo $row['media']; ?>" class="img-fluid" alt="<?php echo $row['media']; ?>">        
                         </div>
                         <div class="card-footer">

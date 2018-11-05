@@ -12,5 +12,15 @@
         }else{
             header("Location:upload.php");
         }
+    }else if(isset($_POST['cancel'])){
+        $postUser = $_SESSION['username'];
+        $media = $_SESSION['fileDestination'];
+        $caption = $_POST['caption'];
+
+        unlink($media);
+        header("Location:upload.php");
     }
+
+    unset($_SESSION['fileDestination']);
+    unset($_SESSION['fileTempName']);
 ?>

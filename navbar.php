@@ -50,12 +50,23 @@
             </div>
             
             <div class="col-2  text-right my-auto">
-                <button class="btn btn-sm btn-info">
+                <button class="btn btn-sm btn-info" id="logoutBtn">
                     <!-- <i style="font-size:24px" class="fa">&#xf08b;</i> -->
                     Logout
                 </button>
             </div>
-    </div>
+        </div>
 </div>
+
+<script>
+    var x = document.getElementById("logoutBtn");
+    x.onClick(function(){
+        console.log("logout2");
+    });
+    $(document).ready(function(){
+        $(#logoutBtn).click(()=>console.log("logout"));
+    });
+</script>
+
 </body>
 </html>

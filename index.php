@@ -6,10 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
-    <?php require("bootstrap.php");
-          require("conn.php");?>
+    <?php 
+      session_start();
+      require("bootstrap.php");
+      require("conn.php");
+    ?>
 </head>
 <body>
+  <?php
+    if(!empty($_SESSION['name']) && !empty($_SESSION['username']) && !empty($_SESSION['email']) && !empty($_SESSION['dp'])){
+		header("Location:timeline.php");
+	};
+  ?>
   <!-- login form -->
   <div class="container mx-auto">
   <?php
@@ -35,7 +43,7 @@
             $_SESSION['username'] = $array['username'];
             $_SESSION['email'] = $array['email'];
             $_SESSION['dp'] = $array['dp'];
-            header("Location:profile.php");
+            header("Location:timeline.php");
           }
         }else{
           die(mysqli_error());
