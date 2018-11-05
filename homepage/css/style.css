@@ -41,6 +41,12 @@ Copyright © All rights Reserved
     width: auto;
 }
 
+.carouselshadow{
+    box-shadow: 2px 2px 20px rgba(60, 8, 118, 0.5);
+    width: 150vh;
+    height: 65vh;
+
+}
 
 
 /*------------------------*/
