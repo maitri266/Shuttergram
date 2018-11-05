@@ -2,8 +2,15 @@
     require("conn.php");
     require("bootstrap.php");
 
-    if(isset($_POST['uploadBtn'])){
-        echo "Dabaya";
+    if(isset($_POST['submit'])){
+        $file = $_FILES["uploadImage"];
+        var_dump($file);
+
+        $fileName = $file['name'];
+        $fileType = $file['type'];
+        $fileTempName = $file['tmp_name'];
+        $fileError = $file['error'];
+        $fileSize = $file['size'];
     }
 ?>
 <!DOCTYPE html>
@@ -15,8 +22,14 @@
     <title>Upload</title>
 </head>
 <body>
-    <form class="container" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
-        <input type="submit" class="btn btn-dark mx-auto" value="Upload" name="uploadBtn">
-    </form>
+    <?php include("navbar.php"); ?>
+    <div class="container">
+        <form class="form-group" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
+            <input type="file" name="uploadImage" id="uploadImage" class="form-control">    
+            <input type="submit" value="Upload" class="btn btn-sm btn-dark" name="submit">
+        </form>
+        <br><br><br>
+        <?php require("footbar.php"); ?>        
+    </div>
 </body>
 </html>
