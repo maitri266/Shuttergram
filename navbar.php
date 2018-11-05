@@ -7,8 +7,7 @@
     <!-- for setting logo -->
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.2/css/all.css'>
     <!-- for logout logo -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <title>Document</title>
     <style>
         #pagename{
             font-family: 'Pattaya', sans-serif;
@@ -17,7 +16,7 @@
     </style>
 </head>
 <body>
-<div class="container-fluid" style="border-bottom:1px solid rgba(0,0,0,.1);">
+<div class="container-fluid" style="border-bottom:1px solid rgba(0,0,0,.1); background : white">
     <div class="row justify-content-between text-center">
             <div class="col-2 text-left my-auto" >
                 <button class="btn btn-sm btn-light" data-toggle="modal" data-target="#exampleModalCenter"><i style="font-size:24px ; color:gray; " class="fa">&#xf013;</i></button>
@@ -46,13 +45,15 @@
             </div>
             <div class="col-4">
                 <a class="navbar-brand" href="#">
-                    <!-- <img src="shuttergram.png" width="35" height="35" class="d-inline-block align-top" alt=""> -->
                     <span id="pagename"><i style='font-size:24px' class='fas'>&#xf083;</i> Shuttergram</span>
                 </a>
             </div>
             
             <div class="col-2  text-right my-auto">
-            <button class="btn btn-sm btn-light"><i style="font-size:24px; color:gray;" class="fa">&#xf08b;</i></button>
+                <button class="btn btn-sm btn-info">
+                    <!-- <i style="font-size:24px" class="fa">&#xf08b;</i> -->
+                    Logout
+                </button>
             </div>
     </div>
 </div>

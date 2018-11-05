@@ -42,6 +42,7 @@
                             if($valid){
                                 $query = "INSERT INTO user(name,email,username,password) VALUES('$name','$email','$username','$password')";
                                 if(mysqli_query($conn,$query)){
+                                    mkdir("$username",0777,true);
                                     ?>
                                         <!-- If the query is executed successfully -->
                                         <div class="alert alert-dismissible alert-success">
@@ -93,6 +94,6 @@
 						</div>
 					</div>
 				</div>
-		</div>
+            </div>
 	</body>
 </html>
