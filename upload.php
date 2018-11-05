@@ -12,6 +12,8 @@
     <div class="container">
 
     <?php
+        // reference
+        // https://www.youtube.com/watch?v=JaRq73y5MJk&t=386s
         session_start();
         require("conn.php");
         require("bootstrap.php");
