@@ -34,6 +34,7 @@
             $_SESSION['name'] = $array['name'];
             $_SESSION['username'] = $array['username'];
             $_SESSION['email'] = $array['email'];
+            $_SESSION['dp'] = $array['dp'];
             header("Location:profile.php");
           }
         }else{

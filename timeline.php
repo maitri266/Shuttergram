@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <img src="bridge.jpg" class="img-fluid" alt="">        
+                            <img src="<?php echo $row['media']; ?>" class="img-fluid" alt="<?php echo $row['media']; ?>">        
                         </div>
                         <div class="card-footer">
                             <h3>
