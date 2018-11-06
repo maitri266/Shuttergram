@@ -1,9 +1,10 @@
-#post{
-    margin-bottom:4vh;
+#profilePic{
+    height: auto;
+    width: 10rem;
+    box-shadow:1px 1px 5px rgba(0,0,0,.1);
 }
 
-#imgStyle{
-    height:30vh;
-     width:30vh; 
-     box-shadow:1px 1px 10px rgba(0,0,0,0.2);
+.postImgFixer{
+    padding-top:70%;
+    width: 100%;
 }

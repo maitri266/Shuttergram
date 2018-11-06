@@ -10,11 +10,9 @@
     <title>Document</title>
     <!-- for inline icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-    <link rel="stylesheet" href="profile.css">
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-   
+    <link rel="stylesheet" href="profile.css">
 </head>
 
 <body>
@@ -23,8 +21,8 @@
         <br>
         <div class="container">
             <div class="row">
-                <div class="col-4 text-center">
-                    <img src="shuttergramDefault.png" class="img-thumbnail rounded-circle" alt="" id="imgStyle" >
+                <div class="col-4 text-center" >
+                    <img src="shuttergramDefault.png" class="img-thumbnail rounded-circle" alt="profilepic" id="profilePic">
                 </div>
                 <div class="col-8 text-center">
                     <div class="row justify-content-center">
@@ -38,7 +36,7 @@
                         <!-- <div class="col-3"></div> -->
                     </div>
                     <br>
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center ">
                         <div class="col-2">345 followers</div>
                         <div class="col-2">145 posts</div>
                         <div class="col-2">454 following</div>
@@ -59,28 +57,17 @@
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-4" id="post">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Title</h3>
-                        <p class="card-text">Text</p>
-                    </div>
-                </div>
-            </div> 
-
-            <!-- mdbootstrap  -->
-            <div class="col-4">
-                <div class="view overlay">
-                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.jpg" class="img-fluid " alt="sample image">
-                    <div class="mask flex-center rgba-black-strong">
-                        <h3 class="white-text text-center">
-                        200 <i style='font-size:auto' class='far'>&#xf004;</i>&nbsp;&nbsp;
-                        20 <i style='font-size:auto' class='far'>&#xf27a;</i>
-                        </h3>
-                    </div>
-                </div>
+        <div class="row row-eq-height justify-content-around" style="background-color:red">
+            <div class="col-3 col-md-offset-2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe vel consectetur quis! Autem sequi maxime doloremque quas quod, eligendi natus aliquid aliquam voluptatem harum vero sint ullam ipsam saepe totam quisquam est sit. Recusandae omnis modi maiores consectetur quia porro.
             </div>
+            <div class="col-3 my-auto">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt recusandae eum exercitationem omnis animi repudiandae unde! Totam inventore provident ut dignissimos ducimus dolor.
+            </div>
+            <div class="col-3">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia veritatis praesentium eum sunt necessitatibus dolores iure quisquam asperiores accusantium. Nisi repellat necessitatibus eveniet maxime enim incidunt voluptas provident dolore similique! Voluptate dolorem ipsum id corporis! Quasi tenetur temporibus totam debitis reprehenderit, magni nesciunt voluptates quisquam nam voluptas ipsam repellendus rem eius possimus sapiente praesentium illo aliquid.
+            </div>
+        </div>
     </div>
     
     <br><br><br>
