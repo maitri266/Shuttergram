@@ -10,21 +10,11 @@
     <title>Document</title>
     <!-- for inline icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="profile.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        #post{
-            margin-bottom:4vh;
-        }
-
-        #imgStyle{
-            height:30vh;
-             width:30vh; 
-             box-shadow:1px 1px 10px rgba(0,0,0,0.2);
-        }
-    </style>
+   
 </head>
 
 <body>

@@ -1,0 +1,9 @@
+#post{
+    margin-bottom:4vh;
+}
+
+#imgStyle{
+    height:30vh;
+     width:30vh; 
+     box-shadow:1px 1px 10px rgba(0,0,0,0.2);
+}

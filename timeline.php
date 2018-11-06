@@ -12,7 +12,7 @@
         <!-- for inline icons -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
         <!-- For Individual Post -->
-        <link rel="stylesheet" href="post.css">
+        <link rel="stylesheet" href="timeline.css">
     </head>
     <body>
 
