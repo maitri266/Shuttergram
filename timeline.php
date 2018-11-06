@@ -17,6 +17,7 @@
     <body>
 
         <?php include("navbar.php"); ?>
+  
         <div class="container mx-auto">
         <?php
 
@@ -24,7 +25,7 @@
                 die("Error connecting to the database");
             }else{
                 //query for retriving the posts
-                $query = "SELECT * from post";
+                $query = "SELECT * from post ORDER BY postTime DESC";
                 $posts = mysqli_query($conn,$query);
 
                 //executing query
@@ -37,6 +38,13 @@
                         $result = mysqli_query($conn,$dpquery);
                         $dpvar = mysqli_fetch_assoc($result);
                         $dp = $dpvar['dp'];
+                        $postId = $row['postId'];
+
+                        $queryLikes = "SELECT count(post) from likes WHERE post='$postId'";
+                        $resultLikes = mysqli_query($conn,$queryLikes);
+                        $resultLikes = mysqli_fetch_assoc($resultLikes);
+                        $resultLikes = $resultLikes['count(post)'];
+
                     ?>
                     <div class="card postCard">
                         <div class="card-header">
@@ -45,21 +53,25 @@
                                 <div class="col-sm-11 h4 align-self-center postTitle"><?php echo $row['postUser']; ?></div>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <img src="bridge.jpg" class="img-fluid" alt="">        
+                        <div class="card-body text-center">
+                            <img src="<?php echo $row['media']; ?>" class="img-fluid" alt="<?php echo $row['media']; ?>" data-postId = "<?php echo $row['postId']; ?>">        
                         </div>
                         <div class="card-footer">
                             <h3>
-                                <i class='far'>&#xf004;</i>&nbsp;
-                                <span class="h5"><?php echo $row['likes']; ?></span>&nbsp;
-                                <i  style=";" class='far farCustom'>&#xf27a;</i>
+                                <i class='far likeBtn' style="cursor: pointer;" data-liked="0">&#xf004;</i>&nbsp;
+                                <span class="h5 likeCount"><?php echo $resultLikes; ?></span>&nbsp;
+
+                                <i class='far commentBtn' style="cursor: pointer;">&#xf27a;</i>
+                                <span class="h5">0</span>&nbsp;
                             </h3>
                             <a class="h5 username" href="#"><?php echo $row['postUser']; ?></a>
                             <span class="muted"><?php echo substr($row['caption'],0,30); ?></small>
-                            <span style = "margin-left : -0.2rem;"id="caption<?php echo $row['postId']; ?>" class="collapse inline">
+                            <span style = "margin-left : -0.2rem;"id="caption<?php echo $row['postId']; ?>" <?php if(strlen($row['caption']) > 30){ ?>class="collapse inline"<?php } ?>>
                                 <?php echo substr($row['caption'],30); ?>
                             </span>
-                            <button class="btn btn-outline-dark btn-sm more" data-target="#caption<?php echo $row['postId']; ?>" class="muted" data-toggle="collapse">more</button>
+                            <?php if(strlen($row['caption']) > 30){ ?>
+                                <button class="btn btn-outline-dark btn-sm more" data-target="#caption<?php echo $row['postId']; ?>" class="muted" data-toggle="collapse" id="expandCaptionBtn">more</button>
+                            <?php } ?>
                         </div>
                     </div> 
                     <?php
@@ -83,6 +95,10 @@
         ?>
         </div>
         <br><br><br>
+
         <?php require("footbar.php"); ?>
+
+     
+        <script src="script.js"></script>
     </body>
 </html>

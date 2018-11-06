@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <? require("bootstrap.php"); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,12 +10,7 @@
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.2/css/all.css'>
     <!-- for logout logo -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <title>Document</title>
-    <style>
-        #pagename{
-            font-family: 'Pattaya', sans-serif;
-            color: black;
-        }
-    </style>
+    <link rel="stylesheet" href="navbar.css">
 </head>
 <body>
 <div class="container-fluid" style="border-bottom:1px solid rgba(0,0,0,.1); background : white">
@@ -50,12 +47,16 @@
             </div>
             
             <div class="col-2  text-right my-auto">
-                <button class="btn btn-sm btn-info">
+                <button class="btn btn-sm btn-info" id="logoutBtn">
                     <!-- <i style="font-size:24px" class="fa">&#xf08b;</i> -->
                     Logout
                 </button>
             </div>
-    </div>
+        </div>
 </div>
+
+    <script>
+       
+    </script>
 </body>
 </html>
