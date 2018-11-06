@@ -10,6 +10,7 @@
         if(mysqli_query($conn,$query)){
             header("Location:timeline.php");
         }else{
+            echo mysqli_error();
             header("Location:upload.php");
         }
     }else if(isset($_POST['cancel'])){

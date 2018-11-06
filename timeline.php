@@ -56,10 +56,12 @@
                             </h3>
                             <a class="h5 username" href="#"><?php echo $row['postUser']; ?></a>
                             <span class="muted"><?php echo substr($row['caption'],0,30); ?></small>
-                            <span style = "margin-left : -0.2rem;"id="caption<?php echo $row['postId']; ?>" class="collapse inline">
+                            <span style = "margin-left : -0.2rem;"id="caption<?php echo $row['postId']; ?>" <?php if(strlen($row['caption']) > 30){ ?>class="collapse inline"<?php } ?>>
                                 <?php echo substr($row['caption'],30); ?>
                             </span>
-                            <button class="btn btn-outline-dark btn-sm more" data-target="#caption<?php echo $row['postId']; ?>" class="muted" data-toggle="collapse">more</button>
+                            <?php if(strlen($row['caption']) > 30){ ?>
+                                <button class="btn btn-outline-dark btn-sm more" data-target="#caption<?php echo $row['postId']; ?>" class="muted" data-toggle="collapse">more</button>
+                            <?php } ?>
                         </div>
                     </div> 
                     <?php

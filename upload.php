@@ -26,7 +26,7 @@
 
         if(isset($_POST['submit'])){
             $file = $_FILES["uploadImage"];
-
+            
             //saving file metadata
             $fileName = $file['name'];
             $fileType = $file['type'];
@@ -39,60 +39,52 @@
             $fileExtension = explode(".",$fileName);
             $fileExtension = strtolower(end($fileExtension));
             $allowed = array("jpg","jpeg","png","bmp");
-            if(!empty($_POST['uploadImage'])){
-                if($fileSize > 100 && $fileSize < 10000000  && $_POST['file']!=NULL){ // If file size is less than 10mb
-                    if(in_array($fileExtension,$allowed)){//If file type is supported
-                        if($fileError === 0){//if file is not corrupt
-                            $fileNameNew = uniqid($_SESSION['username']).".".$fileExtension; //generate a unique Name for image preceded by Username and Succeeded by File Extension
-                            $fileDestination = $username."/".$fileNameNew; //set The file destination for the image
+            if($fileSize > 100 && $fileSize < 10000000){ // If file size is less than 10mb
+                if(in_array($fileExtension,$allowed)){//If file type is supported
+                    if($fileError === 0){//if file is not corrupt
+                        $fileNameNew = uniqid($_SESSION['username']).".".$fileExtension; //generate a unique Name for image preceded by Username and Succeeded by File Extension
+                        $fileDestination = $username."/".$fileNameNew; //set The file destination for the image
 
-                            $_SESSION['fileTempName'] = $fileTempName;
-                            $_SESSION['fileDestination'] = $fileDestination;
-                            move_uploaded_file($fileTempName,$fileDestination); //move the file to the user's directory
-                            $uploadedFlag = true;
-                            ?>
-                                <!-- File Uploaded Successfully -->
-                                <div class="alert alert-dismissible alert-success">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong>File Uploaded Succesfully</strong>
-                                </div>
-                            <?php
-                        }else{
-                            ?>
-                                <!-- File Corrupted -->
-                                <div class="alert alert-dismissible alert-warning">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong>File is Corrupted</strong>
-                                </div>
-                            <?php
-                        }
+                        $_SESSION['fileTempName'] = $fileTempName;
+                        $_SESSION['fileDestination'] = $fileDestination;
+
+                        move_uploaded_file($fileTempName,$fileDestination); //move the file to the user's directory
+                        $uploadedFlag = true;
+                        ?>
+                            <!-- File Uploaded Successfully -->
+                            <div class="alert alert-dismissible alert-success">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>File Uploaded Succesfully</strong>
+                            </div>
+                        <?php
                     }else{
                         ?>
-                            <!-- Unexpected File Extension -->
-                            <div class="alert alert-dismissible alert-danger">
+                            <!-- File Corrupted -->
+                            <div class="alert alert-dismissible alert-warning">
                                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>File Uploaded is too big</strong>
+                                <strong>File is Corrupted</strong>
                             </div>
                         <?php
                     }
                 }else{
                     ?>
-                        <!-- If file is too big -->
-                        <div class="alert alert-dismissible alert-info">
+                        <!-- Unexpected File Extension -->
+                        <div class="alert alert-dismissible alert-danger">
                             <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            <strong>The uploaded File Type is not supported</strong>
+                            <strong>File Uploaded is too big</strong>
                         </div>
                     <?php
                 }
             }else{
                 ?>
                     <!-- If file is too big -->
-                    <div class="alert alert-dismissible alert-danger">
+                    <div class="alert alert-dismissible alert-info">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <strong>Please choose a file before uploading</strong>
+                        <strong>The uploaded File Type is not supported</strong>
                     </div>
                 <?php
             }
+        
         }
         ?>
 
