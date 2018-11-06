@@ -17,6 +17,7 @@
     <body>
 
         <?php include("navbar.php"); ?>
+  
         <div class="container mx-auto">
         <?php
 
@@ -85,6 +86,10 @@
         ?>
         </div>
         <br><br><br>
+
         <?php require("footbar.php"); ?>
+
+     
+        <script src="script.js"></script>
     </body>
 </html>
