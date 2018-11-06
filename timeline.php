@@ -38,6 +38,13 @@
                         $result = mysqli_query($conn,$dpquery);
                         $dpvar = mysqli_fetch_assoc($result);
                         $dp = $dpvar['dp'];
+                        $postId = $row['postId'];
+
+                        $queryLikes = "SELECT count(post) from likes WHERE post='$postId'";
+                        $resultLikes = mysqli_query($conn,$queryLikes);
+                        $resultLikes = mysqli_fetch_assoc($resultLikes);
+                        $resultLikes = $resultLikes['count(post)'];
+
                     ?>
                     <div class="card postCard">
                         <div class="card-header">
@@ -47,13 +54,15 @@
                             </div>
                         </div>
                         <div class="card-body text-center">
-                            <img src="<?php echo $row['media']; ?>" class="img-fluid" alt="<?php echo $row['media']; ?>">        
+                            <img src="<?php echo $row['media']; ?>" class="img-fluid" alt="<?php echo $row['media']; ?>" data-postId = "<?php echo $row['postId']; ?>">        
                         </div>
                         <div class="card-footer">
                             <h3>
-                                <i class='far'>&#xf004;</i>&nbsp;
-                                <span class="h5"><?php echo $row['likes']; ?></span>&nbsp;
-                                <i  style=";" class='far farCustom'>&#xf27a;</i>
+                                <i class='far likeBtn' style="cursor: pointer;" data-liked="0">&#xf004;</i>&nbsp;
+                                <span class="h5 likeCount"><?php echo $resultLikes; ?></span>&nbsp;
+
+                                <i class='far commentBtn' style="cursor: pointer;">&#xf27a;</i>
+                                <span class="h5">0</span>&nbsp;
                             </h3>
                             <a class="h5 username" href="#"><?php echo $row['postUser']; ?></a>
                             <span class="muted"><?php echo substr($row['caption'],0,30); ?></small>
