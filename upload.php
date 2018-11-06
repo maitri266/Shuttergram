@@ -39,7 +39,7 @@
             $fileExtension = explode(".",$fileName);
             $fileExtension = strtolower(end($fileExtension));
             $allowed = array("jpg","jpeg","png","bmp");
-            if($fileSize > 100 && $fileSize < 10000000){ // If file size is less than 10mb
+            if($fileSize > 100 && $fileSize < 30000000){ // If file size is less than 10mb
                 if(in_array($fileExtension,$allowed)){//If file type is supported
                     if($fileError === 0){//if file is not corrupt
                         $fileNameNew = uniqid($_SESSION['username']).".".$fileExtension; //generate a unique Name for image preceded by Username and Succeeded by File Extension
