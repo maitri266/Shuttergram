@@ -25,7 +25,7 @@
                 die("Error connecting to the database");
             }else{
                 //query for retriving the posts
-                $query = "SELECT * from post";
+                $query = "SELECT * from post ORDER BY postTime DESC";
                 $posts = mysqli_query($conn,$query);
 
                 //executing query
@@ -61,7 +61,7 @@
                                 <?php echo substr($row['caption'],30); ?>
                             </span>
                             <?php if(strlen($row['caption']) > 30){ ?>
-                                <button class="btn btn-outline-dark btn-sm more" data-target="#caption<?php echo $row['postId']; ?>" class="muted" data-toggle="collapse">more</button>
+                                <button class="btn btn-outline-dark btn-sm more" data-target="#caption<?php echo $row['postId']; ?>" class="muted" data-toggle="collapse" id="expandCaptionBtn">more</button>
                             <?php } ?>
                         </div>
                     </div> 

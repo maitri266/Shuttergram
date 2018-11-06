@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2018 at 10:09 AM
+-- Generation Time: Nov 06, 2018 at 11:48 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -33,8 +33,17 @@ CREATE TABLE `post` (
   `postUser` varchar(25) NOT NULL,
   `media` varchar(255) NOT NULL,
   `caption` varchar(255) NOT NULL,
-  `likes` int(11) NOT NULL
+  `likes` int(11) NOT NULL,
+  `postTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`postId`, `postUser`, `media`, `caption`, `likes`, `postTime`) VALUES
+(1, 'myronic', 'myronic/myronic5be16e2f1fa05.jpg', 'Frozen Hands', 0, '2018-11-06 10:34:33'),
+(2, 'myronic', 'myronic/myronic5be16e6e3e63c.jpg', 'Sunrise Point \r\nWhat a beautiful Memory It was\r\njust so bautiful', 0, '2018-11-06 10:35:50');
 
 -- --------------------------------------------------------
 
@@ -55,8 +64,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`name`, `email`, `username`, `password`, `dp`) VALUES
-('Jash Gopani', 'jash.gopani@somaiya.edu', 'jash851999', 'jash851999', 'shuttergramDefault.png'),
-('Jash Gopani', 'jash.gopani@somaiya.edu', 'shutter0_0eye', 'jash123', 'shuttergramDefault.png');
+('Myron Carvalho', 'myron.c@somaiya.edu', 'myronic', 'myronic', 'shuttergramDefault.png'),
+('Jash Gopani', 'jash.gopani@somaiya.edu', 'shutter0_0eye', 'jash851999', 'shuttergramDefault.png');
 
 --
 -- Indexes for dumped tables
@@ -83,7 +92,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `postId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `postId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

@@ -5,7 +5,7 @@
         $postUser = $_SESSION['username'];
         $media = $_SESSION['fileDestination'];
         $caption = $_POST['caption'];
-        $query = "INSERT into post(postUser,media,caption) VALUES('$postUser','$media','$caption')";
+        $query = "INSERT into post(postUser,media,caption,postTime) VALUES('$postUser','$media','$caption',CURRENT_TIMESTAMP)";
 
         if(mysqli_query($conn,$query)){
             header("Location:timeline.php");
