@@ -1,3 +1,5 @@
+
+
 $(document).ready(function(){
     $("#logoutBtn").click(function(){
         window.location.replace("logout.php");
@@ -28,6 +30,18 @@ $(document).ready(function(){
             function(data){
                 $(this).attr("data-liked",$dataLiked);
                 $spanElement.html(data);
-        });        
+        });
+        
+        if($dataLiked == 1){
+            $(this).removeClass("far");
+            $(this).addClass("fas");
+            $(this).css("color","red");
+        }else{
+            $(this).removeClass("fas");
+            $(this).addClass("far");
+            $(this).css("color","#444");
+        }
+        
     });
+
 }); 

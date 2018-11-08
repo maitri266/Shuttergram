@@ -54,11 +54,11 @@
                             </div>
                         </div>
                         <div class="card-body text-center">
-                            <img src="<?php echo $row['media']; ?>" class="img-fluid" alt="<?php echo $row['media']; ?>" data-postId = "<?php echo $row['postId']; ?>">        
+                            <img src="<?php echo $row['media']; ?>" class="img-fluid" alt="Sorry, this image is unavailable at the moment" data-postId = "<?php echo $row['postId']; ?>">        
                         </div>
                         <div class="card-footer">
                             <h3>
-                                <i class='far likeBtn' style="cursor: pointer;" data-liked="0">&#xf004;</i>&nbsp;
+                                <i class='far likeBtn' style="" data-liked="0">&#xf004;</i>&nbsp;
                                 <span class="h5 likeCount"><?php echo $resultLikes; ?></span>&nbsp;
 
                                 <i class='far commentBtn' style="cursor: pointer;">&#xf27a;</i>
