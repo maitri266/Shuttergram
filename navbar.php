@@ -47,7 +47,7 @@
             </div>
             
             <div class="col-2  text-right my-auto">
-                <button class="btn btn-sm btn-info" id="logoutBtn">
+                <button class="btn btn-sm btn-primary" id="logoutBtn">
                     <!-- <i style="font-size:24px" class="fa">&#xf08b;</i> -->
                     Logout
                 </button>
