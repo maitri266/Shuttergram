@@ -29,7 +29,7 @@
                 $posts = mysqli_query($conn,$query);
 
                 //executing query
-                if(mysqli_num_rows($posts) > 0){ //if query is successfull
+                if(mysqli_num_rows($posts) > 0){ //if query is successful
 
                     //traversing and displaying posts
                     while($row = mysqli_fetch_assoc($posts)){
