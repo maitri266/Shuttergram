@@ -64,7 +64,7 @@
                         $posts = mysqli_query($conn,$postquery);
 
                         //executing query
-                        if(mysqli_num_rows($posts) > 0){ //if query is successful
+                        if(mysqli_num_rows($posts) > 100){ //if query is successful
 
                             //traversing and displaying user posts
                             while($row = mysqli_fetch_assoc($posts)){
@@ -95,14 +95,17 @@
                         }else{
                             //if Number of Posts available is 0
                             ?>
-                                <div class="jumbotron jumbotron-fluid">
-                                    <div class="h2 text-center">
-                                        No more posts to show
+                                <div class="container" style="color:white">
+                                   <div class="card bg-info">
+                                   <div class="h2 text-center">
+                                        No posts to show<br>
+                                        ¯\_(ツ)_/¯ 
+                                        </div>
+                                        <center>
+                                            <iframe src="https://giphy.com/embed/iAQ5T6IdeyFn4zkVU5" width="480" height="480" frameBorder="0" class="giphy-embed img-fluid" allowFullScreen></iframe>
+                                        </center>
+                                        <div class="h3 text-center muted">Come Back Later</div>
                                     </div>
-                                    <center>
-                                        <iframe src="https://giphy.com/embed/X8yP0AgGK0GQZaVXz9" frameBorder="0" class="giphy-embed img-fluid"></iframe>
-                                    </center>
-                                    <div class="h3 text-center muted">Come Back Later</div>
                                 </div>
                             <?php
                         }
