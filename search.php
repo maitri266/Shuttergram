@@ -1,8 +1,19 @@
+<?php
+    session_start();
+   if(isset( $_POST['search'])){
+    $searchedName= $_POST['search'];
+   }
+    $username=$_SESSION['username'];
+    require("bootstrap.php");
+    require("conn.php");
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <? require("bootstrap.php"); ?>
+<? require("bootstrap.php"); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,10 +21,10 @@
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.2/css/all.css'>
     <!-- for logout logo -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <title>Document</title>
-    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="search.css">
 </head>
 <body>
-<div class="container-fluid" style="border-bottom:1px solid rgba(0,0,0,.1); background : white">
+<div class="container-fluid srch">
     <div class="row justify-content-between text-center">
             <div class="col-2 text-left my-auto" >
                 <button class="btn btn-sm btn-light" data-toggle="modal" data-target="#exampleModalCenter"><i style="font-size:24px ; color:gray; " class="fa">&#xf013;</i></button>
@@ -41,9 +52,14 @@
                 </div>
             </div>
             <div class="col-4">
-                <a class="navbar-brand" href="#">
-                    <span id="pagename"><i style='font-size:24px' class='fas'>&#xf083;</i> Shuttergram</span>
-                </a>
+                <form action="$_SERVER['PHP_SELF']" method="post">
+                    <div class="input-group input-group-sm">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" >Search &nbsp;<i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="search" name="search">
+                    </div>
+                </form>
             </div>
             
             <div class="col-2  text-right my-auto">
@@ -55,8 +71,10 @@
         </div>
 </div>
 
-    <script>
-       
-    </script>
+
+
+
+<br><br><br><br><br><br>
+<?php require("footbar.php"); ?>
 </body>
 </html>

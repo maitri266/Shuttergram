@@ -1,9 +1,36 @@
-#post{
-    margin-bottom:4vh;
+#profilePic{
+    height: auto;
+    width: 10rem;
+    box-shadow:1px 1px 5px rgba(0,0,0,.1);
 }
 
-#imgStyle{
-    height:30vh;
-     width:30vh; 
-     box-shadow:1px 1px 10px rgba(0,0,0,0.2);
+/* post container */
+.piccon{
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.2);
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+    height: auto;
+    /* object-fit: cover; */
+}
+
+hr{
+    margin: 5px;
+}
+
+/* for likes and comments */
+.lnc{ 
+    font-size: 3vh;
+    color: rgba(0,0,0,.7) ;
+    margin: 0px;
+}
+
+/* post image div */
+.imgfix{
+    width: 100%;
+    height: auto;
+    /* object-fit: none; */
 }
