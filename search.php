@@ -2,7 +2,7 @@
     session_start();
     require("bootstrap.php");
     require("conn.php");
-    
+    $myusername= $_SESSION['username'];
 ?>
 
 
@@ -13,11 +13,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- for font  -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
     <!-- for setting logo -->
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.2/css/all.css'>
     <!-- for logout logo -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <title>Document</title>
-    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="search1.css">
 </head>
 <body>
 <div class="container-fluid srch">
@@ -100,6 +102,7 @@
                 }
             ?>
 
+            <h1 align="center" class="h">EXPLORE OTHER ACCOUNTS</h1>
 <!-- ------------timelinecontent-------------- -->
     <div class="container mx-auto">
         <?php
@@ -117,7 +120,9 @@
                     //traversing and displaying posts
                     while($row = mysqli_fetch_assoc($posts)){
                         $username = $row['postUser'];
-                        $dpquery = "SELECT dp from user WHERE username = '$username'";
+                        // to make sure my own account feeds are not displayed
+                        if($myusername !== $username){
+                            $dpquery = "SELECT dp from user WHERE username = '$username'";
                         $result = mysqli_query($conn,$dpquery);
                         $dpvar = mysqli_fetch_assoc($result);
                         $dp = $dpvar['dp'];
@@ -127,39 +132,40 @@
                         $resultLikes = mysqli_query($conn,$queryLikes);
                         $resultLikes = mysqli_fetch_assoc($resultLikes);
                         $resultLikes = $resultLikes['count(post)'];
-
-                    ?>
-                    <br>
-                    <div class="card postCard">
-                        <div class="card-header">
-                            <div class="row">
-                                <div class="col-sm-1"><img src="<?php echo $dp; ?>" class="rounded-circle postImg" alt="Profile"></div>
-                                <div class="col-sm-11 h4 align-self-center postTitle"><?php echo $row['postUser']; ?></div>
+                        
+                        ?>
+                        <br>
+                        <div class="card postCard">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-sm-1"><img src="<?php echo $dp; ?>" class="rounded-circle postImg" alt="Profile"></div>
+                                    <div class="col-sm-11 h4 align-self-center postTitle"><?php echo $row['postUser']; ?></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-body text-center">
-                            <img src="<?php echo $row['media']; ?>" class="img-fluid" alt="Sorry, this image is unavailable at the moment" data-postId = "<?php echo $row['postId']; ?>">        
-                        </div>
-                        <div class="card-footer">
-                            <h3>
-                                <i class='far likeBtn' style="" data-liked="0">&#xf004;</i>&nbsp;
-                                <span class="h5 likeCount"><?php echo $resultLikes; ?></span>&nbsp;
+                            <div class="card-body text-center">
+                                <img src="<?php echo $row['media']; ?>" class="img-fluid" alt="Sorry, this image is unavailable at the moment" data-postId = "<?php echo $row['postId']; ?>">        
+                            </div>
+                            <div class="card-footer">
+                                <h3>
+                                    <i class='far likeBtn' style="" data-liked="0">&#xf004;</i>&nbsp;
+                                    <span class="h5 likeCount"><?php echo $resultLikes; ?></span>&nbsp;
 
-                                <i class='far commentBtn' style="cursor: pointer;">&#xf27a;</i>
-                                <span class="h5">0</span>&nbsp;
-                            </h3>
-                            <a class="h5 username" href="#"><?php echo $row['postUser']; ?></a>
-                            <span class="muted"><?php echo substr($row['caption'],0,30); ?></small>
-                            <span style = "margin-left : -0.2rem;"id="caption<?php echo $row['postId']; ?>" <?php if(strlen($row['caption']) > 30){ ?>class="collapse inline"<?php } ?>>
-                                <?php echo substr($row['caption'],30); ?>
-                            </span>
-                            <?php if(strlen($row['caption']) > 30){ ?>
-                                <button class="btn btn-outline-dark btn-sm more" data-target="#caption<?php echo $row['postId']; ?>" class="muted" data-toggle="collapse" id="expandCaptionBtn">more</button>
-                            <?php } ?>
-                        </div>
-                    </div> 
-                    <?php
-                    } //closing bracket of traversing posts for loop
+                                    <i class='far commentBtn' style="cursor: pointer;">&#xf27a;</i>
+                                    <span class="h5">0</span>&nbsp;
+                                </h3>
+                                <a class="h5 username" href="#"><?php echo $row['postUser']; ?></a>
+                                <span class="muted"><?php echo substr($row['caption'],0,30); ?></small>
+                                <span style = "margin-left : -0.2rem;"id="caption<?php echo $row['postId']; ?>" <?php if(strlen($row['caption']) > 30){ ?>class="collapse inline"<?php } ?>>
+                                    <?php echo substr($row['caption'],30); ?>
+                                </span>
+                                <?php if(strlen($row['caption']) > 30){ ?>
+                                    <button class="btn btn-outline-dark btn-sm more" data-target="#caption<?php echo $row['postId']; ?>" class="muted" data-toggle="collapse" id="expandCaptionBtn">more</button>
+                                <?php } ?>
+                            </div>
+                        </div> 
+                        <?php
+                        } //closing of if not username loop 
+                    } //closing bracket of traversing posts while loop
                         
                 }else{
                     //if Number of Posts available is 0
