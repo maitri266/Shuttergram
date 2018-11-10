@@ -2,10 +2,9 @@
     width: 3vw;
     height: 3vw;
     border-radius: 200px;
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 3px;
     margin: 0;
-   
 }
 
 .postTitle{

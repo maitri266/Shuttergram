@@ -57,20 +57,17 @@
             <div class="row row-eq-height" >
                 <?php
                     if(!$conn){
-                        die("Error connecting to the database");
+                        die("Error connecting to the database. ERROR: ".mysqli_connect_errno());
                     }else{
                         //query for retriving the user posts
                         $postquery = "SELECT * from post WHERE postUser='$username' ORDER BY postTime DESC";
                         $posts = mysqli_query($conn,$postquery);
 
                         //executing query
-                        if(mysqli_num_rows($posts) > 100){ //if query is successful
+                        if(mysqli_num_rows($posts) > 0){ //if query is successful
 
                             //traversing and displaying user posts
                             while($row = mysqli_fetch_assoc($posts)){
-                                // $result = mysqli_query($conn,$dpquery);
-                                // $dpvar = mysqli_fetch_assoc($result);
-                                // $dp = $dpvar['dp'];
                                 $postId = $row['postId'];
                                 $queryLikes = "SELECT count(post) from likes WHERE post='$postId'";
                                 $resultLikes = mysqli_query($conn,$queryLikes);
