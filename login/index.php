@@ -83,7 +83,7 @@ if(!empty($_SESSION['name']) && !empty($_SESSION['username']) && !empty($_SESSIO
 							Forgot Password?
 						</a>
 						<br>
-						<a class="txt1" href="#">
+						<a class="txt1" href="../register.php">
 							New here? Sign up
 						</a>
 					</div>
