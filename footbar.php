@@ -22,7 +22,7 @@
                 <a href="timeline.php"><i class="icon fa">&#xf015;</i></a>
             </div>
             <div  class=" footbar col-3 my-auto">
-                <a href="#"><i class="icon fa">&#xf002;</i></a>
+                <a href="search.php"><i class="icon fa">&#xf002;</i></a>
             </div>
             <div  class=" footbar col-3 my-auto" >
                 <a href="upload.php"><i class="icon fas fa-upload" ></i></a>
@@ -32,5 +32,7 @@
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
+
 </html>

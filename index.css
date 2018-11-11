@@ -1,12 +1,16 @@
 .container{
-    opacity: 0.8;
-    position: absolute;
-    top : 50%;
-    transform: translate(-50%,-50%);
-    left : 50%;
+    height: 100vh;
+    padding-top: 150px;
 }
 
 body{
-    background: url("login.jpg");
+    background: linear-gradient(135deg, rgb(74, 13, 143) 0%, rgb(250, 42, 143) 100%);
+    /* background: url("login.jpg"); */
     background-size: cover;
+}
+
+.btnbg{
+    background: linear-gradient(45deg,  rgb(250, 42, 143) 0%,rgb(74, 13, 143) 100%);
+    color: white;
+    font-weight: 400;
 }

@@ -93,15 +93,12 @@
                             //if Number of Posts available is 0
                             ?>
                                 <div class="container" style="color:white">
-                                   <div class="card bg-info">
-                                   <div class="h2 text-center">
-                                        No posts to show<br>
-                                        ¯\_(ツ)_/¯ 
-                                        </div>
+                                   <div class="card ">
+                                   
                                         <center>
                                             <iframe src="https://giphy.com/embed/iAQ5T6IdeyFn4zkVU5" width="480" height="480" frameBorder="0" class="giphy-embed img-fluid" allowFullScreen></iframe>
                                         </center>
-                                        <div class="h3 text-center muted">Come Back Later</div>
+                                        
                                     </div>
                                 </div>
                             <?php

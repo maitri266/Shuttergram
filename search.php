@@ -86,7 +86,7 @@
                          if( strtolower($userinfo['username']) ===  strtolower($searchedName) ||  strtolower($userinfo['name'])===  strtolower($searchedName)){
                              $flag=1;
                              $_SESSION['username']=$searchedName;
-                            //  header('Location: profile.php');
+                             header('Location: profile.php');
                          }
                      }   
                      if($flag==0){
@@ -102,7 +102,7 @@
                 }
             ?>
 
-            <h1 align="center" class="h">EXPLORE OTHER ACCOUNTS</h1>
+            <h1  class="h text-center">EXPLORE OTHER ACCOUNTS</h1>
 <!-- ------------timelinecontent-------------- -->
     <div class="container mx-auto">
         <?php

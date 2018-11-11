@@ -130,7 +130,10 @@
         </div>
 
         <br><br><br>
-        <?php require("footbar.php"); ?>        
+        <?php require("footbar.php"); ?>     
+
     </div>
+    
+
 </body>
 </html>

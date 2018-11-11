@@ -19,7 +19,7 @@
 	};
   ?>
   <!-- login form -->
-  <div class="container mx-auto">
+  <div class="container align-items-center">
   <?php
     if(isset($_POST['loginBtn'])){
       $username = $_POST['username'];
@@ -52,18 +52,22 @@
     }
   ?>
 
-    <div class="card">
+    <div class="row justify-content-center">
+      <div class="col-sm-7 col-lg-6">
+      <div class="card">
       <div class="card-header text-center"><span class="h2">Login</span></div>
       <div class="card-body text-center">
         <div class="form-group text-center">
         <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
           <input type="text" name="username" id="username" class="form-control" placeholder="Username" value=""><br>
           <input type="password" name="password" id="password" class="form-control" placeholder="Password"><br>
-          <input type="submit" value="Login" name="loginBtn" id="loginBtn" class="btn btn-dark btn-lg">
+          <input type="submit" value="Login" name="loginBtn" id="loginBtn" class="btn btn-block btnbg">
         </div>
       </div>
       <div class="card-footer text-center">
-        <div class="h5">Not a member yet ? <a href="register.php" class="btn btn-sm btn-primary">Register Here</a></div>
+        <div class="h5">Not a member yet ? <a href="register.php" class="btn btn-sm btnbg">Register Here</a></div>
+      </div>
+    </div>
       </div>
     </div>
 </div>
