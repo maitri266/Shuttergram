@@ -9,17 +9,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<? require("bootstrap.php"); ?>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<? require("bootstrap.php");
+ require("head.php"); ?>
     <!-- for font  -->
     <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
     <!-- for setting logo -->
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.2/css/all.css'>
     <!-- for logout logo -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <title>Document</title>
-    <link rel="stylesheet" href="search1.css">
+    <link rel="stylesheet" href="search.css">
 </head>
 <body>
 <div class="container-fluid srch">
