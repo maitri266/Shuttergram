@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <?php require("head.php"); ?>
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="login.css">
     <?php 
       session_start();
       require("bootstrap.php");

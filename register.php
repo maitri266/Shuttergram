@@ -76,7 +76,7 @@
 			<!-- REGISTER form -->
 			<div class="row justify-content-center">
                 <div class="col-md-6">
-                <div class="card">
+                <div class="card" >
 				<div class="card-header text-center"><span class="h2">Register</span></div>
 					<div class="card-body text-center">
 						<div class="form-group text-center">
@@ -89,7 +89,7 @@
 							</form>
 						</div><br><br>
 						<div class="card-footer text-center">
-							<div class="h5">Already a member ? <a href="index.php" class="btn btn-sm ">Login Here</a></div>
+							<div class="h5">Already a member ? <a href="login.php" class="btn btn-sm">Login Here</a></div>
 						</div>
 					</div>
 				</div>
