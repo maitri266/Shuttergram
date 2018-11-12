@@ -86,44 +86,48 @@
         ?>
 
             <!-- Upload Form -->
-            <div class="card">
-                <div class="card-header text-center"><span class="h2">Upload File</span></div>
-                    <div class="card-body text-center">
-                        <div class="form-group text-center">
-                        
-                        <!-- if the user has not uploaded image -->
-                        <?php 
-                            if($uploadedFlag === false){
-                        ?>
-                                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post" enctype="multipart/form-data">
-                                    <input type="file" name="uploadImage" id="uploadImage" class="form-control " value=""> 
-                            </div>
-                            <div class="card-footer text-center">
-                                    <input type="submit" value="Upload" class="btn btn-lg btn-dark" name="submit">
-                                </form>
-                        <?php }else{ ?>
-                            <form action="uploadScript.php" method = "POST">
-                                <div class="row text-center">
-                                    <div class="col-2 text-center">
-                                        <img src="<?php echo $_SESSION['dp']; ?>" class="img-fluid rounded-circle imageSmall" alt="Profile Picture">
-                                    </div>
-                                    <div class="col-8 text-center">
-                                        <textarea class="form-control" name="caption" id="caption" rows="3" placeholder="caption"></textarea>
-                                    </div>
-                                    <div class="col-2 text-center">
-                                        <img src="<?php echo $fileDestination ?>" class="img-fluid" alt="Uploaded">
-                                    </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-7 col-lg-6">
+                <div class="card">
+                    <div class="card-header text-center"><span class="h2">Upload File</span></div>
+                        <div class="card-body text-center">
+                            <div class="form-group text-center">
+                            
+                            <!-- if the user has not uploaded image -->
+                            <?php 
+                                if($uploadedFlag === false){
+                            ?>
+                                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post" enctype="multipart/form-data">
+                                        <input type="file" name="uploadImage" id="uploadImage" class="form-control " value=""> 
                                 </div>
                                 <div class="card-footer text-center">
-                                    <input type="submit" value="Post" class="btn btn-lg btn-dark" name="post">
-                                    <input type="submit" value="Cancel" class="btn btn-lg btn-danger" name="cancel">
-                                </div>
-                            </form>
-                            
-                    <?php } ?>
+                                        <input type="submit" value="Upload" class="btn btn-block btnbg" name="submit">
+                                    </form>
+                            <?php }else{ ?>
+                                <form action="uploadScript.php" method = "POST">
+                                    <div class="row text-center">
+                                        <div class="col-2 text-center">
+                                            <img src="<?php echo $_SESSION['dp']; ?>" class="img-fluid rounded-circle imageSmall" alt="Profile Picture">
+                                        </div>
+                                        <div class="col-8 text-center">
+                                            <textarea class="form-control" name="caption" id="caption" rows="3" placeholder="caption"></textarea>
+                                        </div>
+                                        <div class="col-2 text-center">
+                                            <img src="<?php echo $fileDestination ?>" class="img-fluid" alt="Uploaded">
+                                        </div>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <input type="submit" value="Post" class="btn btn-lg btn-dark" name="post">
+                                        <input type="submit" value="Cancel" class="btn btn-lg btn-danger" name="cancel">
+                                    </div>
+                                </form>
+                                
+                        <?php } ?>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
         <br><br><br>
