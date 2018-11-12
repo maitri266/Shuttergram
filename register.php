@@ -2,10 +2,7 @@
 <html lang="en">
 	<head>
         <link rel="stylesheet" href="register.css">
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>Register</title>
+        <?php require("head.php"); ?>
 
             <?php 
                 require("bootstrap.php");
@@ -13,7 +10,7 @@
             ?>
 	</head>
 	<body>
-		<div class="container mx-auto">
+		<div class="container ml-auto text-center">
             <?php
                 $valid = true;
                 $name = $username = $password = $email = "";
@@ -77,7 +74,9 @@
             ?>
 
 			<!-- REGISTER form -->
-			<div class="card">
+			<div class="row justify-content-center">
+                <div class="col-md-6">
+                <div class="card" >
 				<div class="card-header text-center"><span class="h2">Register</span></div>
 					<div class="card-body text-center">
 						<div class="form-group text-center">
@@ -86,14 +85,16 @@
 								<input type="text" name="email" id="email" class="form-control" placeholder="Email Id" value = "<?php echo $email ?>"  required><br>
 								<input type="text" name="username" id="username" class="form-control" placeholder="Username" value = "<?php echo $username ?>"  required><br>
 								<input type="password" name="password" id="password" class="form-control" placeholder="Password" value = "" required><br>
-								<input type="submit" value="Register" name="registerBtn" id="registerBtn" class="btn btn-dark btn-lg">
+								<input type="submit" value="Register" name="registerBtn" id="registerBtn" class="btn  btn-block">
 							</form>
-						</div>
+						</div><br><br>
 						<div class="card-footer text-center">
-							<div class="h5">Already a member ? <a href="index.php" class="btn btn-sm btn-primary">Login Here</a></div>
+							<div class="h5">Already a member ? <a href="login.php" class="btn btn-sm">Login Here</a></div>
 						</div>
 					</div>
 				</div>
+            </div>
+                </div>
             </div>
 	</body>
 </html>

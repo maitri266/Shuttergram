@@ -8,8 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+<?php require("head.php"); ?>
     <!-- for inline icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <!-- Font Awesome -->
@@ -57,20 +56,17 @@
             <div class="row row-eq-height" >
                 <?php
                     if(!$conn){
-                        die("Error connecting to the database");
+                        die("Error connecting to the database. ERROR: ".mysqli_connect_errno());
                     }else{
                         //query for retriving the user posts
                         $postquery = "SELECT * from post WHERE postUser='$username' ORDER BY postTime DESC";
                         $posts = mysqli_query($conn,$postquery);
 
                         //executing query
-                        if(mysqli_num_rows($posts) > 100){ //if query is successful
+                        if(mysqli_num_rows($posts) > 0){ //if query is successful
 
                             //traversing and displaying user posts
                             while($row = mysqli_fetch_assoc($posts)){
-                                // $result = mysqli_query($conn,$dpquery);
-                                // $dpvar = mysqli_fetch_assoc($result);
-                                // $dp = $dpvar['dp'];
                                 $postId = $row['postId'];
                                 $queryLikes = "SELECT count(post) from likes WHERE post='$postId'";
                                 $resultLikes = mysqli_query($conn,$queryLikes);
@@ -96,15 +92,12 @@
                             //if Number of Posts available is 0
                             ?>
                                 <div class="container" style="color:white">
-                                   <div class="card bg-info">
-                                   <div class="h2 text-center">
-                                        No posts to show<br>
-                                        ¯\_(ツ)_/¯ 
-                                        </div>
+                                   <div class="card ">
+                                   
                                         <center>
                                             <iframe src="https://giphy.com/embed/iAQ5T6IdeyFn4zkVU5" width="480" height="480" frameBorder="0" class="giphy-embed img-fluid" allowFullScreen></iframe>
                                         </center>
-                                        <div class="h3 text-center muted">Come Back Later</div>
+                                        
                                     </div>
                                 </div>
                             <?php
