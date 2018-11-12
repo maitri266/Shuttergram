@@ -42,9 +42,9 @@
             </div>
             <div class="col-4">
                 <form>
-                    <input list="searhbar" name="browser" onkeyup="showSuggestions(this.value)">
-                    <datalist placeholder = "Search by Username" class="form-control" id="searchbar" ></select>
+                    <input list="searhbar"class="form-control" onkeyup="showSuggestions(this.value)">
                 </form>
+                
             </div>
             
             <div class="col-2  text-right my-auto">
@@ -54,6 +54,10 @@
                 </button>
             </div>
         </div>
+        <div class="row justify-content-between text-center">
+            <div class="col justify-content-between text-center" id="output"></div>
+        </div>
+
 </div>
 
     <script>
@@ -66,7 +70,7 @@
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        output.innerHTML ="<a href=\"#\" class=\"alert-link\"><option>" + this.responseText + "</option></a>";
+                        output.innerHTML ="<span class=\"badge badge-pill badge-info\">" + this.responseText + "</span>";
                 }
                 };
                 xhttp.open("GET", "searchScript.php?q="+value, true);

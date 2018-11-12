@@ -1,6 +1,7 @@
 <?php
     session_start();
     $username=$_SESSION['username'];
+    
     require("bootstrap.php");
     require("conn.php");
 ?>
@@ -29,7 +30,7 @@
                     <div class="row justify-content-center">
                         <!-- <div class="col-3"></div> -->
                         <div class="col-3">
-                            <span id="username"><b>siddarthrai</b></span>
+                            <span id="username"><b><?php echo $_SESSION['username']; ?></b></span>
                         </div>
                         <div class="col-3">
                             <a name="editProfile" id="editProfile" class="btn btn-outline-dark btn-sm" href="#" >edit profile</a>
@@ -39,13 +40,23 @@
                     <br>
                     <div class="row justify-content-center ">
                         <div class="col-2">345<br>followers</div>
-                        <div class="col-2">145<br>posts</div>
+                        <div class="col-2"><?php 
+                            $query = "SELECT count(media) FROM post WHERE postUser='".$username."'";
+                            $result = mysqli_query($conn,$query);
+                            $value = mysqli_fetch_assoc($result);
+                            echo $value['count(media)'];
+                        ?><br>posts</div>
                         <div class="col-2">454<br>following</div>
                     </div>
                     <br>
                     <div class="row justify-content-center">
                         <div class="col-10">
-                       siddarth is fat and cute.He is a teddy, consectetur adipisicing elit. Sint asperiores quibusdam quisquam ipsam voluptate nostrum totam et, nam tenetur! Omnis a aperiam laborum! Accusantium nam laudantium quis, consectetur labore corporis.
+                        <?php 
+                            $query = "SELECT description FROM user WHERE username='".$username."'";
+                            $result = mysqli_query($conn,$query);
+                            $value = mysqli_fetch_assoc($result);
+                            echo $value['description'];
+                        ?>
                         </div>
                     </div>
                 </div>
