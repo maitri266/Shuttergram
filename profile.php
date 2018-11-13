@@ -34,6 +34,7 @@
                         </div>
                         <div class="col-3">
                             <a name="editProfile" id="editProfile" class="btn btn-outline-dark btn-sm" href="#" >edit profile</a>
+                            <a href="insights.php" name="insights" id="insights" class="btn btn-outline-dark btn-sm" href="#" >INSIGHTS</a>
                         </div>
                         <!-- <div class="col-3"></div> -->
                     </div>

@@ -18,7 +18,7 @@
         $q = strtolower($q);
         $len = strlen($q);
         for($u=0;$u < sizeof($userArray);$u++){
-            if(stristr($q,substr(strtolower($userArray[$u]) ,0,$len))){
+            if(stristr($q,substr($userArray[$u] ,0,$len))){
                 if($suggestion === ""){
                     $suggestion = $userArray[$u];
                     echo "$suggestion";

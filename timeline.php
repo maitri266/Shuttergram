@@ -62,15 +62,15 @@
                                 <span class="h5">0</span>&nbsp;
                             </h3>
                             <a class="h5 username" href="#"><?php echo $row['postUser']; ?></a>
-                            <span class="muted"><?php echo substr($row['caption'],0,30); ?></small>
-                            <span style = "margin-left : -0.2rem;"id="caption<?php echo $row['postId']; ?>" <?php if(strlen($row['caption']) > 30){ ?>class="collapse inline"<?php } ?>>
+                            <span class="muted"><?php echo substr($row['caption'],0,1100); ?></small>
+                            <span style = "margin-left : -0.2rem;"id="caption<?php echo $row['postId']; ?>" <?php if(strlen($row['caption']) > 1100){ ?>class="collapse inline"<?php } ?>>
                                 <?php echo substr($row['caption'],30); ?>
                             </span>
                             <?php if(strlen($row['caption']) > 30){ ?>
-                                <button class="btn btn-outline-dark btn-sm more" data-target="#caption<?php echo $row['postId']; ?>" class="muted" data-toggle="collapse" id="expandCaptionBtn">more</button>
+                                <!-- <button class="btn btn-outline-dark btn-sm more" data-target="#caption<?php echo $row['postId']; ?>" class="muted" data-toggle="collapse" id="expandCaptionBtn">more</button> -->
                             <?php } ?>
                         </div>
-                    </div> 
+                    </div> <br><br>
                     <?php
                     } //closing bracket of traversing posts for loop
                         
@@ -96,6 +96,6 @@
         <?php require("footbar.php"); ?>
 
      
-        <!-- <script src="script.js"></script> -->
+        <script src="script.js"></script>
     </body>
 </html>

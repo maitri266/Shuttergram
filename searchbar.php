@@ -70,7 +70,7 @@
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        output.innerHTML ="<span class=\"badge badge-pill badge-info\">" + this.responseText + "</span>";
+                        output.innerHTML ="<a href=\"#\"><span class=\"badge badge-pill badge-info\">" + this.responseText + "</span></a>";
                 }
                 };
                 xhttp.open("GET", "searchScript.php?q="+value, true);

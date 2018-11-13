@@ -6,6 +6,7 @@ $(document).ready(function(){
     });
 
     $("#expandCaptionBtn").click(function(){
+        console.log("clicked");
         if($(this).html()=="more"){
             $(this).html("less");
         }else if($(this).html()=="less"){

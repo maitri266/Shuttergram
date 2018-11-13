@@ -51,7 +51,7 @@
                             <!-- File Uploaded Successfully -->
                             <div class="alert alert-dismissible alert-success">
                                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>File Uploaded Succesfully</strong>
+                                <strong>File ready to upload</strong>
                             </div>
                         <?php
                     }else{
@@ -68,7 +68,7 @@
                         <!-- Unexpected File Extension -->
                         <div class="alert alert-dismissible alert-danger">
                             <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            <strong>File Uploaded is too big</strong>
+                            <strong>File Uploaded is too big / Invalid</strong>
                         </div>
                     <?php
                 }
@@ -98,7 +98,7 @@
                                 if($uploadedFlag === false){
                             ?>
                                     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post" enctype="multipart/form-data">
-                                        <input type="file" name="uploadImage" id="uploadImage" class="form-control " value=""> 
+                                        <input type="file" name="uploadImage" id="uploadImage" class="form-control  " value=""> 
                                 </div>
                                 <div class="card-footer text-center">
                                         <input type="submit" value="Upload" class="btn btn-block btnbg" name="submit">
