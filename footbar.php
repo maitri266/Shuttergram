@@ -1,3 +1,5 @@
+<!-- Instagram like looking footbar with buttons to navigate to different pages.-->
+<!-- Making footbar.php saves us from  copy pasting same code snippet in all files. Rather we can just include this file using the include / require function in order for better scalability-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
