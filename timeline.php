@@ -17,7 +17,7 @@
   
         <div class="container mx-auto">
         <?php
-
+            //echo "Timeline.php"
             if(!$conn){
                 die("Error connecting to the database");
             }else{
